@@ -27,10 +27,20 @@
      pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain
      ```
 
-   - 安装 `fmt` 库（用于格式化输出，推荐用于测试和日志记录）：  
+   - 安装 `make` 库：  
      ```bash
-     pacman -S mingw-w64-ucrt-x86_64-fmt
+     pacman -S mingw-w64-ucrt-x86_64-make
      # 需要安装其他库的话，可以参考 packages.msys2.org 进行第三方库的安装
+     ```
+
+   - 安装 `cmake`：  
+     ```bash
+     pacman -S mingw-w64-ucrt-x86_64-cmake
+     ```
+
+   - 安装 `git`（可选）：  
+     ```bash
+     pacman -S git
      ```
 
    - 如需图形化界面支持，安装 QT6：  
@@ -38,7 +48,7 @@
      pacman -S mingw-w64-ucrt-x86_64-qt6
      ```
 
-   - 将 `ucrt64/bin` 和 `ucrt64/lib` 文件夹添加到环境变量 **Path** 中，确保工具链命令可以在终端中执行。
+   - 将 `ucrt64/bin` 和 `usr/bin` 文件夹添加到环境变量 **Path** 中，确保工具链命令可以在终端中执行。
 
 3. **配置 VSCode**  
    确保你已安装 [VSCode](https://code.visualstudio.com/) 和 **C/C++ 插件**。
