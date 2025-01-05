@@ -142,19 +142,18 @@ def save_to_c_cpp_properties_json(cpp_properties_json):
 
 def create_c_cpp_properties_json(cflags, gcc_path):
     """生成 c_cpp_properties.json 配置"""
-    include_path = None
+    include_paths = []
     if cflags:
         cflags_list = cflags.split()
         for flag in cflags_list:
             if flag.startswith("-I"):
-                include_path = convert_to_windows_path(flag[2:])
-                break  # 只取第一个路径
+                include_paths.append(convert_to_windows_path(flag[2:]))
 
     cpp_properties = {
         "configurations": [
             {
                 "name": "Win32",
-                "includePath": ["${workspaceFolder}/**", f"{include_path}\\**"],
+                "includePath": ["${workspaceFolder}/**"] + [f"{path}\\**" for path in include_paths],
                 "defines": [
                     "_DEBUG",
                     "UNICODE",
