@@ -43,9 +43,9 @@
      pacman -S git
      ```
 
-   - 如需图形化界面支持，安装 QT6：  
+   - 如需图形化界面支持，安装 QT6、OpenCV：  
      ```bash
-     pacman -S mingw-w64-ucrt-x86_64-qt6
+     pacman -S mingw-w64-ucrt-x86_64-qt6 mingw-w64-ucrt-x86_64-opencv
      ```
 
    - 将 `ucrt64/bin` 和 `usr/bin` 文件夹添加到环境变量 **Path** 中，确保工具链命令可以在终端中执行。
